@@ -1,1 +1,1 @@
-"""Custom model code for ml-cli."""
+"""Custom model code for pyml-cli."""

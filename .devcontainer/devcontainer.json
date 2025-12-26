@@ -1,5 +1,5 @@
 {
-    "name": "ml-cli",
+    "name": "pyml-cli",
     "build": {
         "dockerfile": "Dockerfile",
         "context": ".."
@@ -19,7 +19,7 @@
     "forwardPorts": [
         8888
     ],
-    "postCreateCommand": "pre-commit install && python -m ipykernel install --user --name ml-cli }}",
+    "postCreateCommand": "pre-commit install && python -m ipykernel install --user --name pyml-cli }}",
     // Use 'postStartCommand' to run commands after the container is _started_.
     "postStartCommand": "jupyter lab --allow-root"
 }

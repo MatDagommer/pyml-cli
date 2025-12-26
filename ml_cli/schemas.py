@@ -1,4 +1,4 @@
-"""DataFrame schemas for ml-cli.
+"""DataFrame schemas for pyml-cli.
 
 DataFrame schemas are written using `pandera`.
 Check out `pandera` docs for more information.

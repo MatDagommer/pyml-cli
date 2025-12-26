@@ -1,1 +1,1 @@
-"""Tests for ml-cli."""
+"""Tests for pyml-cli."""

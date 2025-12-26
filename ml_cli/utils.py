@@ -1,1 +1,1 @@
-"""Utilities for ml-cli."""
+"""Utilities for pyml-cli."""

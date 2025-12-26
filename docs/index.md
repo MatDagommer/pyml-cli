@@ -1,6 +1,6 @@
-# ml-cli }}
+# pyml-cli }}
 
-Welcome to the repository for the ml-cli }} project!
+Welcome to the repository for the pyml-cli }} project!
 
 ## Quickstart
 
@@ -8,13 +8,13 @@ Welcome to the repository for the ml-cli }} project!
 ### Install from PyPI
 
 ```python
-pip install ml-cli
+pip install pyml-cli
 ```
 -->
 ### Install from source
 
 ```bash
-pip install git@github.com:MatDagommer/ml-cli
+pip install git@github.com:MatDagommer/pyml-cli
 ```
 
 ### Build and preview docs

@@ -1,4 +1,4 @@
-"""Custom CLI for ml-cli.
+"""Custom CLI for pyml-cli.
 
 This is totally optional;
 if you want to use it, though,
@@ -18,7 +18,7 @@ app = typer.Typer()
 @app.command()
 def hello():
     """Echo the project's name."""
-    typer.echo("This project's name is ml-cli")
+    typer.echo("This project's name is pyml-cli")
 
 
 @app.command()

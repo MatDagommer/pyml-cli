@@ -4031,7 +4031,7 @@ packages:
   size: 17977
   timestamp: 1736070634758
 - pypi: ./
-  name: ml-cli
+  name: pyml-cli
   version: 0.1.2
   sha256: 2e519228874fd3f8cbc9e89179664bc7647b08267eba2366299eeddb94dbb22c
   requires_dist:

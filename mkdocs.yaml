@@ -1,5 +1,5 @@
-site_name: "ml-cli"
-site_url: https://MatDagommer.github.io/ml-cli
+site_name: "pyml-cli"
+site_url: https://MatDagommer.github.io/pyml-cli
 
 docs_dir: docs/
 
@@ -41,8 +41,8 @@ extra_css:
 extra_javascript:
   - config.js
 
-repo_name: "MatDagommer/ml-cli"
-repo_url: "https://github.com/MatDagommer/ml-cli"
+repo_name: "MatDagommer/pyml-cli"
+repo_url: "https://github.com/MatDagommer/pyml-cli"
 
 extra:
   social:

@@ -58,4 +58,4 @@ jobs:
           pip install -e .
 
       - name: Run CLI as a smoke test.
-        run: "ml-cli --help"
+        run: "pyml-cli --help"

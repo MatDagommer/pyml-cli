@@ -1,3 +1,3 @@
-# Top-level API for ml-cli
+# Top-level API for pyml-cli
 
 ::: ml_cli
