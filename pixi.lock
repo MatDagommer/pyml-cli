@@ -4032,8 +4032,8 @@ packages:
   timestamp: 1736070634758
 - pypi: ./
   name: ml-cli
-  version: 0.0.1
-  sha256: d5409b3504167925fb0931b713a82758ad10fb96b0aa913b5fa95d65245e360b
+  version: 0.1.2
+  sha256: 2e519228874fd3f8cbc9e89179664bc7647b08267eba2366299eeddb94dbb22c
   requires_dist:
   - matplotlib
   - pandas
