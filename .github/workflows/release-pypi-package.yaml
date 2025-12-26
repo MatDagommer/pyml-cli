@@ -81,7 +81,7 @@ jobs:
           git config user.email github-actions@github.com
 
       - name: Run bump-my-version
-        run: bump-my-version ${{ env.VERSION_NAME }} --verbose
+        run: bump-my-version bump ${{ env.VERSION_NAME }} --verbose
 
       - name: Ensure tag creation
         run: git tag | grep ${{ env.version_number }}
