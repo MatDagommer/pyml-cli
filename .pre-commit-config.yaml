@@ -21,6 +21,10 @@ repos:
       - id: vulture
   - repo: https://github.com/econchick/interrogate
     rev: 1.7.0
+    hooks:
+      - id: interrogate
+        exclude: ^(docs/|tests/)
+        args: [-c, pyproject.toml]
   - repo: local
     hooks:
       - id: pixi-install
