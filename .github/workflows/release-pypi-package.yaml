@@ -60,12 +60,12 @@ jobs:
       - name: Set version name
         run: echo "VERSION_NAME=${{ github.event.inputs.version_name || env.DEFAULT_VERSION_NAME }}" >> $GITHUB_ENV
 
-      - name: Dry run bump-my-version
+      - name: Show new version bump-my-version
         run: |
-          bump-my-version --dry-run ${{ env.VERSION_NAME }} --allow-dirty --verbose
+          bump-my-version show --increment ${{ env.VERSION_NAME }} new_version
 
       - name: Store new version number
-        run: echo "version_number=`bump-my-version --dry-run --list ${{ env.VERSION_NAME }} | grep new_version | sed -r s,\"^.*=\",,`" >> $GITHUB_ENV
+        run: echo "version_number=`bump-my-version show --increment ${{ env.VERSION_NAME }} new_version | grep new_version | sed -r s,\"^.*=\",,`" >> $GITHUB_ENV
 
       - name: Display new version number
         run: |
@@ -121,7 +121,7 @@ jobs:
         uses: ncipollo/release-action@v1
         with:
           bodyFile: "docs/releases/v${{ env.version_number }}.md"
-          token: ${{ secrets.WORKFLOW_TOKEN }}
+          token: ${{ secrets.GITHUB_TOKEN }}
           tag: v${{ env.version_number }}
 
       - name: Ensure complete
