@@ -23,7 +23,7 @@ env:
 jobs:
   deploy-package:
     runs-on: ubuntu-latest
-    name: ${{ github.event_name == "pull_request" && "(Dry Run) " || "" }}Publish Python Package to PyPI
+    name: ${{ github.event_name == 'pull_request' && '(Dry Run) '' || '' }}Publish Python Package to PyPI
     permissions:
       id-token: write
       contents: write
@@ -51,6 +51,7 @@ jobs:
         with:
           pixi-version: latest
           cache: true
+          cache-write: ${{ github.event_name == 'push' }}
 
       - name: Set up Python
         run: |
@@ -86,7 +87,7 @@ jobs:
         run: git tag | grep ${{ env.version_number }}
 
       - name: Write release notes
-        if: ${{ github.event_name != "pull_request" }}
+        if: ${{ github.event_name != 'pull_request' }}
         env:
           OPENAI_API_KEY: ${{ secrets.OPENAI_API_KEY }}
         run: |
@@ -95,7 +96,7 @@ jobs:
           llamabot git write-release-notes
 
       - name: Commit release notes
-        if: ${{ github.event_name != "pull_request" }}
+        if: ${{ github.event_name != 'pull_request' }}
         run: |
           uv tool install pre-commit
           pre-commit run --all-files || pre-commit run --all-files
@@ -107,16 +108,16 @@ jobs:
           uv build --sdist --wheel
 
       - name: Publish package
-        if: ${{ github.event_name != "pull_request" }}
+        if: ${{ github.event_name != 'pull_request' }}
         uses: pypa/gh-action-pypi-publish@release/v1
 
       - name: Push changes with tags
-        if: ${{ github.event_name != "pull_request" }}
+        if: ${{ github.event_name != 'pull_request' }}
         run: |
           git push && git push --tags
 
       - name: Create release in GitHub repo
-        if: ${{ github.event_name != "pull_request" }}
+        if: ${{ github.event_name != 'pull_request' }}
         uses: ncipollo/release-action@v1
         with:
           bodyFile: "docs/releases/v${{ env.version_number }}.md"
@@ -124,5 +125,5 @@ jobs:
           tag: v${{ env.version_number }}
 
       - name: Ensure complete
-        if: ${{ github.event_name != "pull_request" }}
+        if: ${{ github.event_name != 'pull_request' }}
         run: echo "Auto-release complete!"
