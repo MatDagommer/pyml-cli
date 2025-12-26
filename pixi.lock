@@ -4030,23 +4030,6 @@ packages:
   - pkg:pypi/mknotebooks?source=hash-mapping
   size: 17977
   timestamp: 1736070634758
-- pypi: ./
-  name: pyml-cli
-  version: 0.1.2
-  sha256: 2e519228874fd3f8cbc9e89179664bc7647b08267eba2366299eeddb94dbb22c
-  requires_dist:
-  - matplotlib
-  - pandas
-  - scikit-learn
-  - numpy
-  - pyprojroot
-  - scipy
-  - pymc
-  - seaborn
-  - python-dotenv
-  - typer
-  - jax
-  requires_python: '>=3.10'
 - pypi: https://files.pythonhosted.org/packages/72/4e/1339dc6e2557a344f5ba5590872e80346f76f6cb2ac3dd16e4666e88818c/ml_dtypes-0.5.4-cp314-cp314-macosx_10_13_universal2.whl
   name: ml-dtypes
   version: 0.5.4
@@ -4884,6 +4867,23 @@ packages:
   - pkg:pypi/pymdown-extensions?source=hash-mapping
   size: 170266
   timestamp: 1765736761772
+- pypi: ./
+  name: pyml-cli
+  version: 0.1.2
+  sha256: 3571e61d25f6dc4385b7bab24de5dbf40315dcc3603089505507ea2ee28e91cc
+  requires_dist:
+  - matplotlib
+  - pandas
+  - scikit-learn
+  - numpy
+  - pyprojroot
+  - scipy
+  - pymc
+  - seaborn
+  - python-dotenv
+  - typer
+  - jax
+  requires_python: '>=3.10'
 - conda: https://conda.anaconda.org/conda-forge/osx-arm64/pyobjc-core-12.1-py314h3a4d195_0.conda
   sha256: df5af268c5a74b7160d772c263ece6f43257faff571783443e34b5f1d5a61cf2
   md5: 75a84fc8337557347252cc4fd3ba2a93
