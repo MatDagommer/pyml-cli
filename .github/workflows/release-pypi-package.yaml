@@ -55,17 +55,17 @@ jobs:
 
       - name: Set up Python
         run: |
-          uv tool install bump2version
+          uv tool install bump-my-version
 
       - name: Set version name
         run: echo "VERSION_NAME=${{ github.event.inputs.version_name || env.DEFAULT_VERSION_NAME }}" >> $GITHUB_ENV
 
-      - name: Dry run bump2version
+      - name: Dry run bump-my-version
         run: |
-          bump2version --dry-run ${{ env.VERSION_NAME }} --allow-dirty --verbose
+          bump-my-version --dry-run ${{ env.VERSION_NAME }} --allow-dirty --verbose
 
       - name: Store new version number
-        run: echo "version_number=`bump2version --dry-run --list ${{ env.VERSION_NAME }} | grep new_version | sed -r s,\"^.*=\",,`" >> $GITHUB_ENV
+        run: echo "version_number=`bump-my-version --dry-run --list ${{ env.VERSION_NAME }} | grep new_version | sed -r s,\"^.*=\",,`" >> $GITHUB_ENV
 
       - name: Display new version number
         run: |
@@ -80,8 +80,8 @@ jobs:
           git config user.name github-actions
           git config user.email github-actions@github.com
 
-      - name: Run bump2version
-        run: bump2version ${{ env.VERSION_NAME }} --verbose
+      - name: Run bump-my-version
+        run: bump-my-version ${{ env.VERSION_NAME }} --verbose
 
       - name: Ensure tag creation
         run: git tag | grep ${{ env.version_number }}
@@ -121,7 +121,7 @@ jobs:
         uses: ncipollo/release-action@v1
         with:
           bodyFile: "docs/releases/v${{ env.version_number }}.md"
-          token: ${{ secrets.GITHUB_TOKEN }}
+          token: ${{ secrets.WORKFLOW_TOKEN }}
           tag: v${{ env.version_number }}
 
       - name: Ensure complete
