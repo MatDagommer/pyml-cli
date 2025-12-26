@@ -65,7 +65,7 @@ jobs:
           bump-my-version show --increment ${{ env.VERSION_NAME }} new_version
 
       - name: Store new version number
-        run: echo "version_number=`bump-my-version show --increment ${{ env.VERSION_NAME }} new_version | grep new_version | sed -r s,\"^.*=\",,`" >> $GITHUB_ENV
+        run: echo "version_number=`bump-my-version show --increment ${{ env.VERSION_NAME }} new_version | sed -r s,\"^.*=\",,`" >> $GITHUB_ENV
 
       - name: Display new version number
         run: |
