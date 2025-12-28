@@ -85,7 +85,7 @@ dependencies = [
 readme = "README.md"
 
 [project.scripts]
-pyml-cli = "ml_cli.cli:app"
+pyml-cli = "pyml_cli.cli:app"
 
 
 [tool.coverage.run]
@@ -94,7 +94,7 @@ omit = [
 ]
 
 [tool.vulture]
-paths = ["pyml-cli", "scripts"]
+paths = ["pyml_cli"]
 min_confidence = 80
 
 [tool.pixi.workspace]

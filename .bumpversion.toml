@@ -24,4 +24,4 @@ post_commit_hooks = []
 filename = "pyproject.toml"
 
 [[tool.bumpversion.files]]
-filename = "ml_cli/version.py"
+filename = "pyml_cli/version.py"
