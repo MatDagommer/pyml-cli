@@ -44,7 +44,7 @@ jobs:
       matrix:
         python-version: ['3.10', '3.11', '3.12', '3.13']
         environment-type: ['pixi', 'uv']
-        test-type: ['unit-tests', 'smoke-tests', 'bare-package']
+        test-type: ['unit-tests', 'smoke-tests']
         exclude:
           # Unit tests only run with pixi
           - test-type: unit-tests
@@ -73,7 +73,7 @@ jobs:
         with:
           pixi-version: latest
           cache: true
-          environments: ${{ matrix.test-type == 'bare-package' && 'bare' || '' }}
+          environments: ${{ matrix.test-type == 'default' && 'tests' || '' }}
 
       # Setup uv if needed
       - name: Setup uv
@@ -91,7 +91,7 @@ jobs:
 
       - name: Run smoke tests (pixi)
         if: ${{ matrix.test-type == 'smoke-tests' && matrix.environment-type == 'pixi' && github.repository_owner == 'matdagommer' }}
-        run: pixi run pyml-cli
+        run: pixi run pyml
 
       - name: Run smoke tests (uv)
         if: ${{ matrix.test-type == 'smoke-tests' && matrix.environment-type == 'uv' && github.repository_owner == 'matdagommer' }}
@@ -99,17 +99,6 @@ jobs:
           source pyml-cli-env/bin/activate
           uv pip install .[all]
           pyml --help
-
-      - name: Run bare package test (pixi)
-        if: ${{ matrix.test-type == 'bare-package' && matrix.environment-type == 'pixi' }}
-        run: pixi run -e bare python scripts/yo.py
-
-      - name: Run bare package test (uv)
-        if: ${{ matrix.test-type == 'bare-package' && matrix.environment-type == 'uv' }}
-        run: |
-          source pyml-cli-env/bin/activate
-          uv pip install .[all]
-          python scripts/yo.py
 
       # Upload code coverage only for unit tests
       - name: Upload code coverage
