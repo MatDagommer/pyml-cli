@@ -6,7 +6,7 @@ from .version import __version__
 try:
     from sh import pixi  # noqa: F401
 except ImportError:
-    err_msg = """To use `pyds`, you need to have `pixi` installed.
+    err_msg = """To use `pyml-cli`, you need to have `pixi` installed.
 
 Please follow installation instructions available at: https://pixi.sh/latest/
 """
