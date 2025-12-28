@@ -6,3 +6,7 @@ This is the file from which you can do:
 
 Use it to control the top-level API of your Python data science project.
 """
+
+from .version import __version__
+
+__all__ = ["__version__"]
