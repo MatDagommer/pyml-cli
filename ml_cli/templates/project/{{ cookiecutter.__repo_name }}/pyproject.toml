@@ -55,7 +55,7 @@ profile = "black"
 [tool.ruff]
 # See https://docs.astral.sh/ruff/rules/ for a list of rules.
 # See https://docs.astral.sh/ruff/configuration/#using-pyprojecttoml for configuration documentation
-select = ["E", "F", "I"]
+lint.select = ["E", "F", "I"]
 
 [tool.setuptools]
 include-package-data = true
@@ -65,7 +65,7 @@ where = ["."]
 namespaces = false
 
 [project]
-name = "pyml-cli"
+name = "{{ cookiecutter.project_name }}"
 version = "0.1.0"
 # NOTE: move dependencies into this section if you need to distribute the project as a Python package.
 requires-python = ">=3.10"
@@ -76,16 +76,15 @@ dependencies = [
     "numpy",
     "pyprojroot",
     "scipy",
-    "pymc",
     "seaborn",
     "python-dotenv",
     "typer",
-    "jax",
+    "loguru",
 ]
 readme = "README.md"
 
 [project.scripts]
-pyml-cli = "{{ cookiecutter.project_name }}.cli:app"
+{{ cookiecutter.__cli_name }} = "{{ cookiecutter.__module_name }}.cli:app"
 
 
 [tool.coverage.run]
@@ -98,7 +97,7 @@ channels = ["conda-forge"]
 platforms = ["osx-arm64", "linux-64"]
 
 [tool.pixi.pypi-dependencies]
-pyml-cli = { path = ".", editable = true }
+{{ cookiecutter.__package_name }} = { path = ".", editable = true }
 
 # NOTE: Core dependencies (needed for running the program) go here.
 [tool.pixi.dependencies]
@@ -127,6 +126,9 @@ pixi-kernel = "*"
 
 [tool.pixi.feature.devtools.dependencies]
 pre-commit = "*"
+
+[tool.pixi.feature.api.dependencies]
+fastapi = "*"
 
 # NOTE: CUDA feature is inspired by https://github.com/prefix-dev/pixi/issues/1051#issuecomment-2088820974
 [tool.pixi.feature.cuda]
