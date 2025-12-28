@@ -5016,7 +5016,7 @@ packages:
 - pypi: ./
   name: pyml-cli
   version: 0.1.4
-  sha256: 427f7a91699e321da10c247f03f68ebcc48e75f43f89f2df7c573ae4fcaf8af3
+  sha256: 39f353014e856faa5a4ea340fee7ebc129405655ee15d23fbc9a4a89a6205b13
   requires_dist:
   - matplotlib
   - pandas

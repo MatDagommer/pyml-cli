@@ -1,4 +1,4 @@
-"""Initialization of the main module."""
+"""Initialize the parent module."""
 
 from .version import __version__
 

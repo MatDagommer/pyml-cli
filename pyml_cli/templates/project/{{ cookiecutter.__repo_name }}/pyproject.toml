@@ -92,6 +92,10 @@ omit = [
     "tests/*",
 ]
 
+[tool.vulture]
+paths = ["{{ cookiecutter.__module_name }}", "scripts"]
+min_confidence = 80
+
 [tool.pixi.workspace]
 channels = ["conda-forge"]
 platforms = ["osx-arm64", "linux-64"]

@@ -93,6 +93,10 @@ omit = [
     "tests/*",
 ]
 
+[tool.vulture]
+paths = ["pyml-cli", "scripts"]
+min_confidence = 80
+
 [tool.pixi.workspace]
 channels = ["conda-forge"]
 platforms = ["osx-arm64", "linux-64"]
