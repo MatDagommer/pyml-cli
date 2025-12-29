@@ -66,7 +66,7 @@ jobs:
         with:
           pixi-version: latest
           cache: true
-          environments: ${{ matrix.test-type == 'unit-tests' && 'smoke-tests' || '' }}
+          environments: default
 
       # Run the appropriate test based on matrix variables
       - name: Run unit tests
@@ -75,7 +75,7 @@ jobs:
 
       - name: Run smoke tests (pixi)
         if: ${{ matrix.test-type == 'smoke-tests' && github.repository_owner == 'matdagommer' }}
-        run: pixi run -e default pyml --help
+        run: pixi run pyml --help
 
       # Upload code coverage only for unit tests
       - name: Upload code coverage
