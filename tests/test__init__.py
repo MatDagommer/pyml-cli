@@ -9,7 +9,7 @@ runner = CliRunner()
 
 
 def test_configure():
-    """Test for configuring the pyds CLI."""
+    """Test for configuring the pyml CLI."""
     result = runner.invoke(
         app,
         ["configure"],

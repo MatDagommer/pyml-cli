@@ -2,7 +2,7 @@
 
 from pathlib import Path
 
-import yaml
+import ruamel.yaml
 
 
 def read_config():
@@ -16,9 +16,9 @@ def read_config():
     """
     try:
         config_path = Path.home() / ".pyml.yaml"
-        _yaml = yaml.YAML()  # defaults to round-trip
+        yaml = ruamel.yaml.YAML()  # defaults to round-trip
 
         with config_path.open("r+") as f:
-            return _yaml.load(f.read())
+            return yaml.load(f.read())
     except FileNotFoundError:
         raise FileNotFoundError("❗️Please run `pyml configure` to configure pyml!")
