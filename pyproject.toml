@@ -113,6 +113,7 @@ cookiecutter = ">=2.6.0,<3"
 sh = "==2.1"
 marimo = ">=0.18.4,<0.19"
 "ruamel.yaml" = ">=0.18.17,<0.19"
+yaml = ">=0.2.5,<0.3"
 
 # NOTE: Testing dependencies (not needed for running program) go here.
 [tool.pixi.feature.tests.dependencies]
