@@ -75,7 +75,7 @@ jobs:
 
       - name: Run smoke tests (pixi)
         if: ${{ matrix.test-type == 'smoke-tests' && github.repository_owner == 'matdagommer' }}
-        run: pixi run pyml
+        run: pyml --help
 
       # Upload code coverage only for unit tests
       - name: Upload code coverage
