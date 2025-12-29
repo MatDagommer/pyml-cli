@@ -81,7 +81,11 @@ dependencies = [
     "python-dotenv",
     "typer",
     "jax",
-    "sh ==2.1",
+    "sh",
+    "loguru",
+    "ruamel-yaml",
+    "cookiecutter",
+    "pyyaml",
 ]
 readme = "README.md"
 
@@ -107,13 +111,7 @@ pyml-cli = { path = ".", editable = true }
 
 # NOTE: Core dependencies (needed for running the program) go here.
 [tool.pixi.dependencies]
-typer = ">=0.21.0,<0.22"
-loguru = ">=0.7.3,<0.8"
-cookiecutter = ">=2.6.0,<3"
-sh = "==2.1"
 marimo = ">=0.18.4,<0.19"
-"ruamel.yaml" = ">=0.18.17,<0.19"
-yaml = ">=0.2.5,<0.3"
 
 # NOTE: Testing dependencies (not needed for running program) go here.
 [tool.pixi.feature.tests.dependencies]
