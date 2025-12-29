@@ -11,6 +11,6 @@ PROJECT_TEMPLATE_DIR = Path(__file__).parent.parent / "templates" / "project"
 
 
 @app.command()
-def initialize():
-    """Initialize project fdrom template."""
+def init():
+    """Initialize project from template."""
     cookiecutter(str(PROJECT_TEMPLATE_DIR.resolve()))

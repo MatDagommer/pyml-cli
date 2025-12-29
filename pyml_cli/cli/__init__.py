@@ -2,7 +2,10 @@
 
 from typer import Typer
 
-from .project import initialize
+from .project import init
+from .system import status
 
-app = Typer()
-app.command()(initialize)
+app = Typer(pretty_exceptions_show_locals=False)
+
+app.command()(init)
+app.command()(status)
