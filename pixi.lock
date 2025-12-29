@@ -5312,8 +5312,8 @@ packages:
   timestamp: 1765736761772
 - pypi: ./
   name: pyml-cli
-  version: 0.1.6
-  sha256: b3c666b17f78748d29fc3e8ed4b7e3a1a673f41d8ebaaf650741de8ccdb616d6
+  version: 0.1.7
+  sha256: 1b91c4bfad716056f9378015fff8cbc54638940727ab03f27403fc546754b209
   requires_dist:
   - matplotlib
   - pandas
