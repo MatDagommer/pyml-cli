@@ -162,3 +162,4 @@ default = { features = ["tests", "devtools", "notebook", "setup"] }
 docs = { features = ["docs"] }
 tests = { features = ["tests", "setup"] }
 cuda = { features = ["tests", "devtools", "notebook", "setup", "cuda"] }
+api = { features = ["api"] }
