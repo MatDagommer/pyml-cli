@@ -22,7 +22,7 @@ def init():
         project_path = Path(output_dir)
         try:
             os.chdir(project_path)
-            git("init")
+            git("init", "-b", "main")
             logger.info(f"✓ Initialized git repository in {project_path}")
         except Exception as e:
             print(f"⚠ Git initialization failed: {e} - skipping git initialization")
